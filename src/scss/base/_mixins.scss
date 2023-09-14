@@ -22,8 +22,8 @@
 
 @mixin boton($color, $texto) {
     background-color: $color;
-    font-size: 2rem;
-    padding: 1.2rem 4rem;
+    font-size: 1.7rem;
+    padding: 1.2rem 2.5rem;
     font-weight: 700;
     display: block;
     width: 100%;
@@ -32,7 +32,7 @@
     text-decoration: none;
     transition: background-color .3s ease;
     border: none;
-
+   
     &:hover {
         cursor: pointer;
         background-color: darken($color, 10);
@@ -74,7 +74,7 @@
     &::after {
         content: '';
         display: block;
-        background-color: $colorLinea;
+        background-color: $colorLinea; 
         width: calc(100% + 1rem);
         height: 7px;
         margin: -10px 0 0 0;
