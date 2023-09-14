@@ -57,3 +57,19 @@
     background-size: cover;
     background-position: top center;
 }
+
+@mixin headingBorder($colorTexto, $colorLinea) {
+
+    font-size: 3rem;
+    display: inline-block;
+    color: $colorTexto;
+
+    &::after {
+        content: '';
+        display: block;
+        background-color: $colorLinea;
+        width: calc(100% + 1rem);
+        height: 7px;
+        margin: -10px 0 0 0;
+    }
+}
