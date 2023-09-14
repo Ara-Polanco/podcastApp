@@ -1,0 +1,80 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.testimoniales {
+
+    @include m.desktop { 
+        @include m.grid(5, 4rem);
+        align-items: center;
+
+        &__imagen {
+            grid-column: 1 / 3;
+        }
+
+        &__contenido {
+            grid-column: 3 / 6;
+        }
+    }
+
+    &__img {
+        margin: 0 auto;
+    }
+
+    &__contenido {
+        text-align: center;
+
+        @include m.desktop {    
+            text-align: left;
+        }
+    }
+
+    &__heading {
+        @include m.headingBorder(v.$secundario, v.$primario);
+        margin-top: v.$separacion * 2;
+    }
+}
+
+.testimoniales__texto {
+    background-color: v.$primario;
+    border: 4px solid v.$secundario;
+    margin-bottom: v.$separacion;
+    padding: v.$separacion;
+    border-radius: 1rem;
+    position: relative;
+
+    @include m.desktop { 
+        max-width: 70%;
+
+        &:nth-child(2){
+            margin-left: 10%; 
+        }
+        &:nth-child(3){
+            margin-left: 20%; 
+        }
+        &:nth-child(4){
+            margin-left: 30%; 
+        }
+    }
+    
+
+    &::before {
+        content: '';
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        background-image: url(/build/img/comilla.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin: 0;
+        padding-left: 6rem;
+    }
+
+}
